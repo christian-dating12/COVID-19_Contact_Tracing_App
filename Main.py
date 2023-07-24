@@ -9,7 +9,9 @@
 import csv
 import tkinter as tk
 
-      
+class App_Window:
+    def __init__(self):
+        pass
 
 
 
