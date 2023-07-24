@@ -6,10 +6,7 @@
 # Add Entry
 # Search Entry
 
-import csv
 import tkinter as tk
-from tkinter import messagebox, ttk
-import time
 
 class App_Window:
     def __init__(self):
@@ -26,37 +23,7 @@ class App_Window:
 
         self.window.mainloop()
 
-    def window_load(self):
-
-        window_load = tk.Toplevel()
-        window_load.geometry("300x100")
-        window_load.title("Loading...")
-        window_load.config(bg="#E8D9CD")
-
-        style = ttk.Style()
-        style.theme_use('alt')
-        style.configure("Custom.Horizontal.TProgressbar", background='#794F2E')
-
-        progressbar = ttk.Progressbar(window_load, mode='determinate', length=250, style="Custom.Horizontal.TProgressbar")
-        progressbar.pack(pady=40)
-
-        progressbar.start()
-
-        for i in range(101):
-            progressbar['value'] = i
-            window_load.update()  # Update the loading screen
-            # Simulate a delay
-            time.sleep(0.008)
-        progressbar.stop()
-        window_load.destroy()
-        self.show_main_gui()
-        window_load.after(99)
-        window_load.mainloop()
-
-    def show_main_gui(self):
-        self.window.deiconify()
-        self.window.destroy()
-        x = App_Window()
+    
 
 
 try:
