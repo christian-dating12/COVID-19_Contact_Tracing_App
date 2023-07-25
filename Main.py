@@ -8,6 +8,8 @@
 
 import tkinter as tk
 
+
+
 class App_Window:
     def __init__(self):
         self.window = tk.Tk()
@@ -17,19 +19,31 @@ class App_Window:
 
         tk.Label(self.window, text="COVID-19 CONTACT TRACING APP",
                  font=("Impact", 30, "bold"),bg="#C1C1CD", fg="#800000").pack(pady=20)
-        
-        tk.Button(self.window, text="START", font=("Montserrat", 15, "bold",), width=8,
-                  command=self.window_load, bg="#800000", bd=0, fg="white").pack(pady=15)
+     
+       # Create add entry button.
+        add_button = tk.Button(self.window, text="Add Entry", command=self.add_entry, height=3, bg="yellow", fg="black", font=("Arial", 10, "bold"))
+        add_button.place(x=450, y=290, width=200)
 
+        # Create search entry button.
+        search_button = tk.Button(self.window, text="Search Entry", command=self.search_entry, height=3, bg="pink", fg="black", font=("Arial", 10, "bold"))
+        search_button.place(x=450, y=360, width=200)
+
+        
         self.window.mainloop()
+
+
+    
+App_Window()        
+
+
+
+
+
+
+
 
     
 
-
-try:
-    app = App_Window()
-except Exception as error:
-    App_Window.error("Error", str(error))
 
 
 
