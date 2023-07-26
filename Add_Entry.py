@@ -35,6 +35,25 @@ class add_entry(tk.Frame):
         self.age_entry.bind("<FocusIn>", self.clear_age_text)
         self.age_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
+        self.email = tk.Label(self, text=" E-mail Address:  ", height=2, font=("Montesarrat", 10, "bold"))
+        self.email.place(x=330, y=170)
+        self.email.config(bg="#808080")
+        self.email_entry = tk.Entry(self, width=30)
+        self.email_entry.place(x=446, y= 176)
+        self.email_entry.insert(0, " -----------------@gmail.com")  
+        self.email_entry.bind("<FocusIn>", self.clear_email_text)
+        self.email_entry.config(fg="black", bg="#FFFFFF", font=("Montesarrat", 15))
+
+        self.address = tk.Label(self, text=" Current Address: ", height=2, font=("Montesarrat", 10, "bold"))
+        self.address.place(x=0, y=235)
+        self.address.config(bg="#808080")
+        self.address_entry = tk.Entry(self, width=60)
+        self.address_entry.place(x=118, y= 240)
+        self.address_entry.insert(0, " House no. , Street, Village, Barangay, City ")  
+        self.address_entry.bind("<FocusIn>", self.clear_address_text)
+        self.address_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
+
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
         self.name_entry.config(fg="black")
@@ -46,3 +65,11 @@ class add_entry(tk.Frame):
     def clear_age_text(self, event):
         self.age_entry.delete(0, tk.END)
         self.age_entry.config(fg="black")
+
+    def clear_email_text(self, event):
+        self.email_entry.delete(0, tk.END)
+        self.email_entry.config(fg="black")
+
+    def clear_address_text(self, event):
+        self.address_entry.delete(0, tk.END)
+        self.address_entry.config(fg="black")
