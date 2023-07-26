@@ -17,8 +17,7 @@ class App_Window:
         self.window.geometry("800x600")
         self.window.configure(bg="#808080")
 
-        tk.Label(self.window, text="COVID-19 CONTACT TRACING APP",
-                 font=("Impact", 30, "bold"),bg="#808080", fg="#800000").pack(pady=20)
+        tk.Label(self.window, text="COVID-19 CONTACT TRACING APP", font=("Impact", 30, "bold"),bg="#808080", fg="#800000").pack(pady=20)
      
         
         add_button = tk.Button(self.window, text="Add Entry", command=self.add_entry, height=2, bg="white", fg="black", font=("Monteserrat", 10, "bold"))

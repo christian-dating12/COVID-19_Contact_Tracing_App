@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import StringVar
+import csv
 
 class add_entry(tk.Frame):
     def __init__(self):
@@ -175,11 +176,42 @@ class add_entry(tk.Frame):
         self.contact_relationship_entry.place(x=950, y=450)
         self.contact_relationship_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
+        submit = tk.Button(self, text=" SUBMIT ", command= self.submit_data, bg="#800000", height=2, width = 25)
+        submit.place(x=700, y=550)
 
+    def submit_data(self):
 
+        user_name = self.name_entry.get()
+        user_sex = self.sex_entry.get()
+        user_age = self.age_entry.get()
+        user_email = self.email_entry.get()
+        user_address = self.address_entry.get()
 
+        user_fever = self.fever_choice.get()
+        user_headache = self.headache_choice.get()
+        user_cough = self.cough_choice.get()
+        user_colds = self.colds_choice.get()
+        user_loss_of_taste = self.loss_of_taste_choice.get()
+        user_loss_of_smell = self.loss_of_smell_choice.get()
+        user_diarrhea = self.diarrhea_choice.get()
+        user_shortness_of_breath = self.shortness_of_breath_choice.get()
+        user_difficulty_of_breathing = self.difficulty_of_breathing_choice.get()
+        user_body_pains = self.body_pains_choice.get()
 
+        user_first = self.first_choice.get()
+        user_second = self.second_choice.get()
+        user_first_booster = self.first_booster_choice.get()
+        user_second_booster = self.second_booster_choice.get()
+        user_not_yet = self.not_yet_choice.get()
 
+        user_contact_name = self.contact_name_entry.get()
+        user_contact_number = self.contact_number_entry.get()
+        user_contact_email = self.contact_email_entry.get()
+        user_contact_relationship = self.contact_relationship_entry.get()
+
+        with open('Entry.csv', 'a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([user_name, user_sex, user_age, user_address, user_fever, user_headache, user_cough, user_colds, user_loss_of_taste, user_loss_of_smell, user_diarrhea, user_shortness_of_breath, user_difficulty_of_breathing, user_body_pains, user_first, user_second, user_first_booster, user_second_booster, user_not_yet, user_contact_name, user_contact_number, user_contact_email, user_contact_relationship])
 
 
 
