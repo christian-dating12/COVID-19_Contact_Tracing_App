@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import StringVar
 
 class add_entry(tk.Frame):
     def __init__(self):
@@ -56,6 +57,63 @@ class add_entry(tk.Frame):
         self.health_status_label = tk.Label(self, text=" HEALTH STATUS ", height=2, font=("Montesarrat", 10, "bold"))
         self.health_status_label.place(x=330, y=290)
         self.health_status_label.config(bg="#800000")
+
+        self.symptoms = tk.Label(self, text=" Are you experiencing any symptoms in the past 7 days such as: ", width=50, height=2, font=("Montesarrat", 10, "bold"))
+        self.symptoms.place(x=0, y=350)
+        self.symptoms.config(bg="#808080")
+
+        self.fever = StringVar(value="No")
+        self.headache = StringVar(value="No")
+        self.cough = StringVar(value="No")
+        self.colds = StringVar(value="No")
+        self.loss_of_taste = StringVar(value="No")
+        self.loss_of_smell = StringVar(value="No")
+        self.diarrhea = StringVar(value="No")
+        self.shortness_of_breath = StringVar(value="No")
+        self.difficulty_of_breathing = StringVar(value="No")
+        self.body_pains = StringVar(value="No")
+
+        self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Montesarrat", 10), variable=self.fever, onvalue="Yes", offvalue="No")
+        self.fever_checkbox.place(x=50, y=400)
+        self.fever_checkbox.config(bg="#FFFFFF")
+
+        self.headache_checkbox = tk.Checkbutton(self, text="Headache", font=("Montesarrat", 10), variable=self.headache, onvalue="Yes", offvalue="No")
+        self.headache_checkbox.place(x=50, y=430)
+        self.headache_checkbox.config(bg="#FFFFFF")
+
+        self.cough_checkbox = tk.Checkbutton(self, text="Cough", font=("Montesarrat", 10), variable=self.cough, onvalue="Yes", offvalue="No")
+        self.cough_checkbox.place(x=50, y=460)
+        self.cough_checkbox.config(bg="#FFFFFF")
+
+        self.colds_checkbox = tk.Checkbutton(self, text="Colds", font=("Montesarrat", 10), variable=self.colds, onvalue="Yes", offvalue="No")
+        self.colds_checkbox.place(x=50, y=490)
+        self.colds_checkbox.config(bg="#FFFFFF")
+
+        self.loss_of_taste_checkbox = tk.Checkbutton(self, text="Loss of taste", font=("Montesarrat", 10), variable=self.loss_of_taste, onvalue="Yes", offvalue="No")
+        self.loss_of_taste_checkbox.place(x=50, y=520)
+        self.loss_of_taste_checkbox.config(bg="#FFFFFF")
+
+        self.loss_of_smell_checkbox = tk.Checkbutton(self, text="Loss of smell", font=("Montesarrat", 10), variable=self.loss_of_smell, onvalue="Yes", offvalue="No")
+        self.loss_of_smell_checkbox.place(x=200, y=400)
+        self.loss_of_smell_checkbox.config(bg="#FFFFFF")
+
+        self.diarrhea_checkbox = tk.Checkbutton(self, text="Diarrhea", font=("Montesarrat", 10), variable=self.diarrhea, onvalue="Yes", offvalue="No")
+        self.diarrhea_checkbox.place(x=200, y=430)
+        self.diarrhea_checkbox.config(bg="#FFFFFF")
+
+        self.shortness_of_breath_checkbox = tk.Checkbutton(self, text="Shortness of breath", font=("Montesarrat", 10), variable=self.shortness_of_breath, onvalue="Yes", offvalue="No")
+        self.shortness_of_breath_checkbox.place(x=200, y=460)
+        self.shortness_of_breath_checkbox.config(bg="#FFFFFF")
+
+        self.difficulty_of_breathing_checkbox = tk.Checkbutton(self, text="Difficulty of breathing", font=("Montesarrat", 10), variable=self.difficulty_of_breathing, onvalue="Yes", offvalue="No")
+        self.difficulty_of_breathing_checkbox.place(x=200, y=490)
+        self.difficulty_of_breathing_checkbox.config(bg="#FFFFFF")
+
+        self.body_pains_checkbox = tk.Checkbutton(self, text="Body pains", font=("Montesarrat", 10), variable=self.body_pains, onvalue="Yes", offvalue="No")
+        self.body_pains_checkbox.place(x=200, y=520)
+        self.body_pains_checkbox.config(bg="#FFFFFF")
+
+
 
 
 
