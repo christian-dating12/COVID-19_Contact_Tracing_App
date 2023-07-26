@@ -113,6 +113,72 @@ class add_entry(tk.Frame):
         self.body_pains_checkbox.place(x=200, y=520)
         self.body_pains_checkbox.config(bg="#FFFFFF")
 
+        self.vaccine_label = tk.Label(self, text="Have you been vaccinated for COVID-19?", width=40, height=2,  font=("Monteserrat", 10, "bold"))
+        self.vaccine_label.place(x=450, y=350)
+        self.vaccine_label.config(bg="#808080")
+
+        self.first = StringVar(value="No")
+        self.second = StringVar(value="No")
+        self.first_booster = StringVar(value="No")
+        self.second_booster = StringVar(value="No")
+        self.not_yet = StringVar(value="No")
+
+        self.first_checkbox = tk.Checkbutton(self, text="Vaccinated, 1st Dose", font=("Montesarrat", 10), variable=self.first, onvalue="Yes", offvalue="No")
+        self.first_checkbox.place(x=525, y=400)
+        self.first_checkbox.config(bg="#FFFFFF")
+
+        self.second_checkbox = tk.Checkbutton(self, text="Fully Vaccinated, 2nd Dose", font=("Montesarrat", 10), variable=self.second, onvalue="Yes", offvalue="No")
+        self.second_checkbox.place(x=525, y=430)
+        self.second_checkbox.config(bg="#FFFFFF")
+
+        self.first_booster_checkbox = tk.Checkbutton(self, text="1st Booster Shot", font=("Montesarrat", 10), variable=self.first_booster, onvalue="Yes", offvalue="No")
+        self.first_booster_checkbox.place(x=525, y=460)
+        self.first_booster_checkbox.config(bg="#FFFFFF")
+
+        self.second_booster_checkbox = tk.Checkbutton(self, text="2nd Booster Shot", font=("Montesarrat", 10), variable=self.second_booster, onvalue="Yes", offvalue="No")
+        self.second_booster_checkbox.place(x=525, y=490)
+        self.second_booster_checkbox.config(bg="#FFFFFF")
+
+        self.not_yet_checkbox = tk.Checkbutton(self, text="Not Yet", font=("Montesarrat", 10), variable=self.not_yet, onvalue="Yes", offvalue="No")
+        self.not_yet_checkbox.place(x=525, y=520)
+        self.not_yet_checkbox.config(bg="#FFFFFF")
+
+        self.contact_person_label = tk.Label(self, text=" CONTACT PERSON DETAILS ", height=2, font=("Montesarrat", 10, "bold"))
+        self.contact_person_label.place(x=950, y=50)
+        self.contact_person_label.config(bg="#800000")
+
+        self.contact_name = tk.Label(self, text=" Name: ", height=2, font=("Montesarrat", 10, "bold"))
+        self.contact_name.place(x=900, y=110)
+        self.contact_name.config(bg="#808080")
+        self.contact_name_entry = tk.Entry(self, width=35)
+        self.contact_name_entry.place(x=950, y=150)
+        self.contact_name_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
+        self.contact_number = tk.Label(self, text=" Contact Number: ", height=2, font=("Montesarrat", 10, "bold"))
+        self.contact_number.place(x=900, y=210)
+        self.contact_number.config(bg="#808080")
+        self.contact_number_entry = tk.Entry(self, width=35)
+        self.contact_number_entry.place(x=950, y=250)
+        self.contact_number_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
+        self.contact_email = tk.Label(self, text=" E-mail Address: ", height=2, font=("Montesarrat", 10, "bold"))
+        self.contact_email.place(x=900, y=310)
+        self.contact_email.config(bg="#808080")
+        self.contact_email_entry = tk.Entry(self, width=35)
+        self.contact_email_entry.place(x=950, y=350)
+        self.contact_email_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
+        self.contact_relationship = tk.Label(self, text=" Relationship to the contact person: ", height=2, font=("Montesarrat", 10, "bold"))
+        self.contact_relationship.place(x=900, y=410)
+        self.contact_relationship.config(bg="#808080")
+        self.contact_relationship_entry = tk.Entry(self, width=35)
+        self.contact_relationship_entry.place(x=950, y=450)
+        self.contact_relationship_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
+
+
+
+
 
 
 
