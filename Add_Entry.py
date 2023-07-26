@@ -26,6 +26,15 @@ class add_entry(tk.Frame):
         self.sex_entry.bind("<FocusIn>", self.clear_sex_text)
         self.sex_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
+        self.age = tk.Label(self, text="  Age:  ", height=2, font=("Monteserrat", 10, "bold"))
+        self.age.place(x=0, y=170)
+        self.age.config(bg="#808080")
+        self.age_entry = tk.Entry(self, width=20)
+        self.age_entry.place(x=51, y= 176)
+        self.age_entry.insert(0, " Age ")  
+        self.age_entry.bind("<FocusIn>", self.clear_age_text)
+        self.age_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
+
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
         self.name_entry.config(fg="black")
@@ -33,3 +42,7 @@ class add_entry(tk.Frame):
     def clear_sex_text(self, event):
         self.sex_entry.delete(0, tk.END)
         self.sex_entry.config(fg="black")
+
+    def clear_age_text(self, event):
+        self.age_entry.delete(0, tk.END)
+        self.age_entry.config(fg="black")
