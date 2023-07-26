@@ -53,6 +53,11 @@ class add_entry(tk.Frame):
         self.address_entry.bind("<FocusIn>", self.clear_address_text)
         self.address_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
+        self.health_status_label = tk.Label(self, text=" HEALTH STATUS ", height=2, font=("Montesarrat", 10, "bold"))
+        self.health_status_label.place(x=330, y=290)
+        self.health_status_label.config(bg="#800000")
+
+
 
     def clear_name_text(self, event):
         self.name_entry.delete(0, tk.END)
