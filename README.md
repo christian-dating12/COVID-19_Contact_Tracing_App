@@ -12,4 +12,6 @@
 ![image](https://github.com/christian-dating12/COVID-19_Contact_Tracing_App/assets/129758910/966fd0a0-4dbf-4128-bd9d-4e88beea6bbf)
 
 # Submit Entry Window
+![image](https://github.com/christian-dating12/COVID-19_Contact_Tracing_App/assets/129758910/e2cb34ff-453a-410e-b3da-7d9d149484e0)
+
 
