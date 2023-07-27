@@ -8,6 +8,7 @@
 
 import tkinter as tk
 from Add_Entry import add_entry
+from Search_Entry import search_entry
 
 
 class App_Window:
@@ -21,13 +22,23 @@ class App_Window:
      
         
         add_button = tk.Button(self.window, text="Add Entry", command=self.add_entry, height=2, bg="white", fg="black", font=("Monteserrat", 10, "bold"))
-        add_button.place(x=150, y=190, width=150)
+        add_button.place(x=200, y=190, width=150)
+
+        search_button = tk.Button(self.window, text="Search Entry", command=self.search_entry, height=2, bg="white", fg="black", font=("Monteserrat", 10, "bold"))
+        search_button.place(x=450, y=190, width=150)
 
         self.window.mainloop()
 
     def add_entry(self):
         frame_frame = add_entry()
         frame_frame.place(x=0, y=0, relwidth=1, relheight=1)
+
+    def search_entry(self):
+        frame_frame = search_entry()
+        frame_frame.place(x=0, y=0, relwidth=1, relheight=1)
+
+    def close_window(self):
+        self.window.destroy()
     
 App_Window()        
 
