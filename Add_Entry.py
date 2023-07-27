@@ -15,8 +15,6 @@ class add_entry(tk.Frame):
         self.name.config(bg="#808080")
         self.name_entry = tk.Entry(self, width=35)
         self.name_entry.place(x=50, y=115)
-        self.name_entry.insert(0, " Surname, Given Name, Middle Name")  
-        self.name_entry.bind("<FocusIn>", self.clear_name_text)
         self.name_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
         self.sex = tk.Label(self, text="   Sex:   ", height=2, font=("Monteserrat", 10, "bold"))
@@ -24,8 +22,6 @@ class add_entry(tk.Frame):
         self.sex.config(bg="#808080")
         self.sex_entry = tk.Entry(self, width=20)
         self.sex_entry.place(x=550, y= 115)
-        self.sex_entry.insert(0, " Male / Female")  
-        self.sex_entry.bind("<FocusIn>", self.clear_sex_text)
         self.sex_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
         self.age = tk.Label(self, text="  Age:  ", height=2, font=("Monteserrat", 10, "bold"))
@@ -33,8 +29,6 @@ class add_entry(tk.Frame):
         self.age.config(bg="#808080")
         self.age_entry = tk.Entry(self, width=20)
         self.age_entry.place(x=51, y= 176)
-        self.age_entry.insert(0, " Age ")  
-        self.age_entry.bind("<FocusIn>", self.clear_age_text)
         self.age_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
         self.email = tk.Label(self, text=" E-mail Address:  ", height=2, font=("Montesarrat", 10, "bold"))
@@ -42,8 +36,6 @@ class add_entry(tk.Frame):
         self.email.config(bg="#808080")
         self.email_entry = tk.Entry(self, width=30)
         self.email_entry.place(x=446, y= 176)
-        self.email_entry.insert(0, " -----------------@gmail.com")  
-        self.email_entry.bind("<FocusIn>", self.clear_email_text)
         self.email_entry.config(fg="black", bg="#FFFFFF", font=("Montesarrat", 15))
 
         self.address = tk.Label(self, text=" Current Address: ", height=2, font=("Montesarrat", 10, "bold"))
@@ -51,8 +43,6 @@ class add_entry(tk.Frame):
         self.address.config(bg="#808080")
         self.address_entry = tk.Entry(self, width=60)
         self.address_entry.place(x=118, y= 240)
-        self.address_entry.insert(0, " House no. , Street, Village, Barangay, City ")  
-        self.address_entry.bind("<FocusIn>", self.clear_address_text)
         self.address_entry.config(fg="black", bg="#FFFFFF", font=("Monteserrat", 15))
 
         self.health_status_label = tk.Label(self, text=" HEALTH STATUS ", height=2, font=("Montesarrat", 10, "bold"))
@@ -73,6 +63,7 @@ class add_entry(tk.Frame):
         self.shortness_of_breath = StringVar(value="No")
         self.difficulty_of_breathing = StringVar(value="No")
         self.body_pains = StringVar(value="No")
+        self.none = StringVar(value="No")
 
         self.fever_checkbox = tk.Checkbutton(self, text="Fever", font=("Montesarrat", 10), variable=self.fever, onvalue="Yes", offvalue="No")
         self.fever_checkbox.place(x=50, y=400)
@@ -113,6 +104,10 @@ class add_entry(tk.Frame):
         self.body_pains_checkbox = tk.Checkbutton(self, text="Body pains", font=("Montesarrat", 10), variable=self.body_pains, onvalue="Yes", offvalue="No")
         self.body_pains_checkbox.place(x=200, y=520)
         self.body_pains_checkbox.config(bg="#FFFFFF")
+
+        self.none_checkbox = tk.Checkbutton(self, text="None of the above", font=("Montesarrat", 10), variable=self.none, onvalue="Yes", offvalue="No")
+        self.none_checkbox.place(x=125, y=550)
+        self.none_checkbox.config(bg="#FFFFFF")
 
         self.vaccine_label = tk.Label(self, text="Have you been vaccinated for COVID-19?", width=40, height=2,  font=("Monteserrat", 10, "bold"))
         self.vaccine_label.place(x=450, y=350)
@@ -197,6 +192,7 @@ class add_entry(tk.Frame):
         user_shortness_of_breath = self.shortness_of_breath_choice.get()
         user_difficulty_of_breathing = self.difficulty_of_breathing_choice.get()
         user_body_pains = self.body_pains_choice.get()
+        user_none = self.none_choice.get()
 
         user_first = self.first_choice.get()
         user_second = self.second_choice.get()
@@ -211,26 +207,5 @@ class add_entry(tk.Frame):
 
         with open('Entry.csv', 'a', newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([user_name, user_sex, user_age, user_address, user_fever, user_headache, user_cough, user_colds, user_loss_of_taste, user_loss_of_smell, user_diarrhea, user_shortness_of_breath, user_difficulty_of_breathing, user_body_pains, user_first, user_second, user_first_booster, user_second_booster, user_not_yet, user_contact_name, user_contact_number, user_contact_email, user_contact_relationship])
+            writer.writerow([user_name, user_sex, user_age, user_address, user_fever, user_headache, user_cough, user_colds, user_loss_of_taste, user_loss_of_smell, user_diarrhea, user_shortness_of_breath, user_difficulty_of_breathing, user_body_pains, user_none, user_first, user_second, user_first_booster, user_second_booster, user_not_yet, user_contact_name, user_contact_number, user_contact_email, user_contact_relationship])
 
-
-
-    def clear_name_text(self, event):
-        self.name_entry.delete(0, tk.END)
-        self.name_entry.config(fg="black")
-
-    def clear_sex_text(self, event):
-        self.sex_entry.delete(0, tk.END)
-        self.sex_entry.config(fg="black")
-
-    def clear_age_text(self, event):
-        self.age_entry.delete(0, tk.END)
-        self.age_entry.config(fg="black")
-
-    def clear_email_text(self, event):
-        self.email_entry.delete(0, tk.END)
-        self.email_entry.config(fg="black")
-
-    def clear_address_text(self, event):
-        self.address_entry.delete(0, tk.END)
-        self.address_entry.config(fg="black")
