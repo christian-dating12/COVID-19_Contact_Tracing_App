@@ -13,17 +13,14 @@ class search_entry(tk.Frame):
         search_button = tk.Button(self, text="Search",bg="#FFFFFF", height=2, width = 16, font=("Montesarrat", 10, "bold"),  command=self.search)
         search_button.place(x=713, y=98)
 
-        self.first_result = tk.Canvas(self, width=400, height=500, bg="white")
+        self.first_result = tk.Canvas(self, width=800, height=490, bg="white")
         self.first_result.place(x=50, y=150)
 
-        self.second_result = tk.Canvas(self, width=400, height=500, bg="white")
-        self.second_result.place(x=450, y=150)
-
         ok_button = tk.Button(self, text="OK", command=self.close, bg="maroon", font=("Montesarrat", 12))
-        ok_button.place(x=412, y=620)
+        ok_button.place(x=420, y=643)
 
         back_button = tk.Button(self, text="Back", command=self.main, bg="maroon", font=("Montesarrat", 12))
-        back_button.place(x=800, y=620)
+        back_button.place(x=470, y=643)
 
     def search(self):
         self.first_result.delete("See more")
